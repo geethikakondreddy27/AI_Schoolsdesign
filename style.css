@@ -65,9 +65,9 @@ body {
 .dropdown-content {
   display: none;
   position: absolute;
-  top: 100%;          /* 👈 instead of 35px */
+  top: 100%;         
   left: 0;
-  margin-top: 2px;    /* 👈 tiny gap only */
+  margin-top: 2px;    
   background: white;
   padding: 15px;
   width: 250px;
@@ -75,7 +75,7 @@ body {
   border-radius: 8px;
 }
 
-/* hover still works */
+
 .dropdown:hover .dropdown-content {
   display: block;
 }
@@ -102,7 +102,7 @@ body {
   position: absolute;
   top: 0;
   left: 100%;
-  margin-left: 2px;   /* 👈 tiny gap fix */
+  margin-left: 2px;   
   background: white;
   padding: 10px;
   width: 220px;
@@ -111,7 +111,6 @@ body {
 }
 
 
-/* keep hover */
 .nested-dropdown:hover .nested-content {
   display: block;
 }
@@ -204,7 +203,7 @@ body {
     display: flex;
   }
 
-  /* REMOVE hover behavior in mobile */
+  
   .dropdown:hover .dropdown-content {
     display: none;
   }
@@ -213,7 +212,7 @@ body {
     display: none;
   }
 
-  /* SHOW everything in mobile */
+  
   .dropdown-content,
   .nested-content {
     display: block;
