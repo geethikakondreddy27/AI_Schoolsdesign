@@ -1,0 +1,235 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: #333;
+}
+
+body {
+  font-family: Arial, sans-serif;
+}
+
+/* NAVBAR */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 40px;
+  background: white;
+  position: relative;
+}
+
+
+
+/* NAV LINKS */
+.nav-links {
+  display: flex;
+  gap: 25px;
+  margin: 0 auto;
+}
+
+.nav-links a {
+  padding: 6px 10px;
+  border-radius: 6px;
+}
+
+.nav-links a:hover {
+  background: #fff1f5;
+  color: #ec4899;
+}
+
+/* BUTTONS */
+.nav-actions button {
+  margin-left: 10px;
+  padding: 8px 14px;
+  border: none;
+  cursor: pointer;
+  border-radius: 6px;
+}
+
+.cta {
+  background: #ec4899;
+  color: white;
+}
+
+/* DROPDOWN (DESKTOP) */
+.dropdown {
+  position: relative;
+}
+
+/* make dropdown sit closer */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 100%;          /* 👈 instead of 35px */
+  left: 0;
+  margin-top: 2px;    /* 👈 tiny gap only */
+  background: white;
+  padding: 15px;
+  width: 250px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  border-radius: 8px;
+}
+
+/* hover still works */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* ITEMS */
+.item {
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.item:hover {
+  background: #fff1f5;
+}
+
+/* NESTED DROPDOWN */
+.nested-dropdown {
+  position: relative;
+  padding-right: 5px;
+}
+
+/* improved nested dropdown */
+.nested-content {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 100%;
+  margin-left: 2px;   /* 👈 tiny gap fix */
+  background: white;
+  padding: 10px;
+  width: 220px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  border-radius: 8px;
+}
+
+
+/* keep hover */
+.nested-dropdown:hover .nested-content {
+  display: block;
+}
+
+/* HERO */
+.hero {
+  text-align: center;
+  padding: 80px 20px;
+  background: #fff1f5;
+}
+
+.hero h1 {
+  font-size: 36px;
+}
+
+.hero p {
+  margin-top: 15px;
+  color: #555;
+}
+
+/* CARDS */
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 40px;
+}
+
+.card {
+  width: 250px;
+  padding: 20px;
+  border: 1px solid #fbcfe8;
+  border-radius: 10px;
+  background: white;
+}
+
+/* TESTIMONIALS */
+.testimonials {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 40px;
+}
+
+.circle {
+  width: 150px;
+  height: 150px;
+  background: #ec4899;
+  border-radius: 50%;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 10px;
+}
+
+/* MENU BUTTON */
+.menu-toggle {
+  display: none;
+  font-size: 24px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* ================= MOBILE ================= */
+@media (max-width: 768px) {
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    position: fixed;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    height: calc(100vh - 60px);
+    background: white;
+    padding: 20px;
+    overflow-y: auto;
+    z-index: 1000;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  /* REMOVE hover behavior in mobile */
+  .dropdown:hover .dropdown-content {
+    display: none;
+  }
+
+  .nested-dropdown:hover .nested-content {
+    display: none;
+  }
+
+  /* SHOW everything in mobile */
+  .dropdown-content,
+  .nested-content {
+    display: block;
+    position: static;
+    box-shadow: none;
+    padding-left: 10px;
+    width: 100%;
+  }
+
+  .dropdown {
+    margin-bottom: 15px;
+  }
+
+  .cards,
+  .testimonials {
+    flex-direction: column;
+    align-items: center;
+  }
+}

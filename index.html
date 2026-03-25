@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Ready Schools</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+  <h2 class="logo">AI Ready Schools</h2>
+
+  <button class="menu-toggle">☰</button>
+
+  <div class="nav-links" id="navLinks">
+
+
+    <!-- AI COMPANIONS -->
+     <div class="dropdown">
+      <a href="#" class="dropdown-toggle">AI Companions ▾</a>
+      <div class="dropdown-content">
+
+        <div class="section">
+          <div class="item">
+            <strong>For Students</strong>
+            Cypher (Student Learning Companion)
+          </div>
+        </div>
+
+        <div class="section">
+          <div class="item">
+            <strong>For Teachers</strong>
+            Morpheus (AI Teaching Assistant)
+          </div>
+        </div>
+
+        <div class="nested-dropdown">
+          <div class="item"><strong>For Schools</strong> ▸</div>
+          <div class="nested-content">
+            <div>Zion (AI Tools Platform)</div>
+            <div>NEO (AI Learning Lab)</div>
+            <div>Matrix (School AI System)</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- AI HUBS -->
+    <div class="dropdown">
+      <a href="#" class="dropdown-toggle">AI Hubs ▾</a>
+      <div class="dropdown-content">
+        <div class="item"><strong>Learning Hub</strong><br>AI Learning Tools for Education</div>
+        <div class="item"><strong>Creative Hub</strong><br>Image, Video, Audio AI Tools</div>
+        <div class="item"><strong>Project Hub</strong><br>Coding & Model Playgrounds</div>
+        <div class="item"><strong>Research Hub</strong><br>Research Facilitators</div>
+      </div>
+    </div>
+
+  </div> <!-- ✅ NOW CLOSED CORRECTLY -->
+
+  <div class="nav-actions">
+    <button class="login">Sign In</button>
+    <button class="cta">Book a Demo</button>
+  </div>
+</nav>
+
+
+<!-- HERO -->
+<section class="hero">
+  <h1>One AI Platform for Smarter Schools</h1>
+  <p>
+    Help students learn better, teachers teach faster, and schools run smarter with one unified AI platform.
+  </p>
+</section>
+
+<!-- CARDS -->
+<section class="cards">
+
+  <div class="card">
+    <h3>Cypher</h3>
+    <p>AI assistant for students that personalizes learning and solves doubts instantly.</p>
+  </div>
+
+  <div class="card">
+    <h3>Morpheus</h3>
+    <p>Helps teachers create lessons, manage classes, and reduce workload.</p>
+  </div>
+
+  <div class="card">
+    <h3>Zion</h3>
+    <p>30+ AI tools for content creation, productivity, and learning enhancement.</p>
+  </div>
+
+  <div class="card">
+    <h3>NEO</h3>
+    <p>Hands-on AI lab for students to explore and innovate with real tools.</p>
+  </div>
+
+  <div class="card">
+    <h3>Matrix</h3>
+    <p>Secure infrastructure to manage and scale AI across the school.</p>
+  </div>
+
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="testimonials">
+
+  <div class="circle">
+    <h2>95%</h2>
+    <p>Teacher Satisfaction</p>
+  </div>
+
+  <div class="circle">
+    <h2>92%</h2>
+    <p>Student Engagement</p>
+  </div>
+
+  <div class="circle">
+    <h2>90%</h2>
+    <p>School Approval</p>
+  </div>
+
+</section>
+
+<script>
+  // menu toggle
+  const toggle = document.querySelector(".menu-toggle");
+  const navLinks = document.getElementById("navLinks");
+
+  toggle.addEventListener("click", () => {
+    navLinks.classList.toggle("active");
+  });
+
+  // dropdown click
+  document.querySelectorAll(".dropdown-toggle").forEach(toggle => {
+    toggle.addEventListener("click", function(e) {
+      if (window.innerWidth <= 768) {
+        e.preventDefault();
+        this.parentElement.classList.toggle("active");
+      }
+    });
+  });
+
+  // nested dropdown click
+  document.querySelectorAll(".nested-dropdown > .item").forEach(item => {
+    item.addEventListener("click", function() {
+      if (window.innerWidth <= 768) {
+        this.parentElement.classList.toggle("active");
+      }
+    });
+  });
+</script>
+</body>
+</html>
